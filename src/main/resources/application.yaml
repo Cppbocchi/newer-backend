@@ -1,0 +1,6 @@
+spring:
+  #配置thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false

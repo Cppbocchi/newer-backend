@@ -1,18 +1,18 @@
-package com.jaylm.web.controller.user;
+package com.newer.jay.demo.controller.user;
 
-import com.jaylm.web.service.user.LoginService;
+import com.newer.jay.demo.service.user.UserLoginService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.annotation.Resource;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController
 public class LoginController {
     @Resource
-    private LoginService loginService;
+    private UserLoginService loginService;
 
     @PostMapping("/user/login")
     public Map<String, Object> login(@RequestBody Map<String, Object> map, HttpServletResponse response) {

@@ -1,4 +1,8 @@
 package com.newer.jay.demo.mapper;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.newer.jay.demo.entity.User;
+import org.apache.ibatis.annotations.Mapper;
 
-public interface UserMapper {
+@Mapper
+public interface UserMapper extends BaseMapper<User> {
 }

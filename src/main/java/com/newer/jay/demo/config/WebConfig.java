@@ -1,4 +1,4 @@
-package com.jaylm.web.config;
+package com.newer.jay.demo.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;

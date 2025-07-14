@@ -1,19 +1,24 @@
-package com.newer.jay.demo.service;
+package com.newer.jay.demo.service.user;
 
 import com.newer.jay.demo.entity.User;
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
 public class UserDetailImpl implements UserDetails {
     private User user;
+
+    // 无参构造函数
+    public UserDetailImpl() {
+    }
+
+    // 有参构造函数
+    public UserDetailImpl(User user) {
+        this.user = user;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -26,7 +31,9 @@ public class UserDetailImpl implements UserDetails {
     }
 
     @Override
-    public String getUsername() { return user.getEmail(); }
+    public String getUsername() { 
+        return user.getEmail(); 
+    }
 
     @Override
     public boolean isAccountNonExpired() {

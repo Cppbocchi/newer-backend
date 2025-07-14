@@ -1,4 +1,4 @@
-package com.jaylm.web.util;
+package com.newer.jay.demo.util;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtBuilder;

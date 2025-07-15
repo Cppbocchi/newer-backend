@@ -8,7 +8,7 @@ import com.baomidou.mybatisplus.autoconfigure.DdlApplicationRunner;
 import com.baomidou.mybatisplus.extension.ddl.IDdl;
 
 @Configuration
-public class RuntimeConfig {
+public class ApplicationRunnerConfig {
     
     @Bean
     public DdlApplicationRunner ddlApplicationRunner(List<IDdl> ddlList) {

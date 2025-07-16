@@ -9,7 +9,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/user")
 public class RegisterController {
     
     @Resource
@@ -21,7 +20,7 @@ public class RegisterController {
      * @param response HTTP响应
      * @return 注册结果
      */
-    @PostMapping("/register")
+    @PostMapping("/api/auth/register")
     public Map<String, Object> register(@RequestBody UserRegisterDTO registerDTO, HttpServletResponse response) {
         try {
             Map<String, Object> result = userRegisterService.register(

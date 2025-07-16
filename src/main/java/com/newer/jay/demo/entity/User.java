@@ -15,7 +15,7 @@ import java.util.Map;
 @TableName(value = "user", autoResultMap = true)
 public class User {
     @TableId(type = IdType.AUTO)
-    private Integer userId;
+    private Long userId;
     
     private String name;
     private String email;

@@ -1,5 +1,6 @@
 package com.newer.jay.demo.controller.user;
 
+import com.newer.jay.demo.dto.LoginResponseDTO;
 import com.newer.jay.demo.service.user.UserLoginService;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,22 +15,21 @@ public class LoginController {
     @Resource
     private UserLoginService loginService;
 
-    @PostMapping("/user/login")
-    public Map<String, Object> login(@RequestBody Map<String, Object> map, HttpServletResponse response) {
-        String username = map.get("username").toString();
+    @PostMapping("api/auth/login")
+    public LoginResponseDTO login(@RequestBody Map<String, Object> map, HttpServletResponse response) {
         String email = (String) map.get("email");
         String password = (String) map.get("password");
 
         if (email == null || password == null) {
             response.setStatus(400);
-            return Map.of("status", 1, "message", "email and password are required");
+            return new LoginResponseDTO(1, "email and password are required", null, null);
         }
 
         try {
             return loginService.login(email, password);
         } catch (Exception e) {
             response.setStatus(500);
-            return Map.of("status", 1, "message", e.getMessage());
+            return new LoginResponseDTO(1, e.getMessage(), null, null);
         }
     }
 }

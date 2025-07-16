@@ -13,7 +13,7 @@ public class UserDetailImplTest {
     public void testUserDetailImplConstructor() {
         // 创建测试用户
         User user = new User();
-        user.setUserId(1);
+        user.setUserId(1L);
         user.setName("测试用户");
         user.setEmail("test@example.com");
         user.setHashedPassword("hashedPassword123");

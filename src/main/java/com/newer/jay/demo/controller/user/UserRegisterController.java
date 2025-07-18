@@ -9,7 +9,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController
-public class RegisterController {
+@RequestMapping("/api/auth")
+public class UserRegisterController {
     
     @Resource
     private UserRegisterService userRegisterService;
@@ -20,7 +21,7 @@ public class RegisterController {
      * @param response HTTP响应
      * @return 注册结果
      */
-    @PostMapping("/api/auth/register")
+    @PostMapping("/register")
     public Map<String, Object> register(@RequestBody UserRegisterDTO registerDTO, HttpServletResponse response) {
         try {
             Map<String, Object> result = userRegisterService.register(
@@ -35,7 +36,7 @@ public class RegisterController {
             if (status != 0) {
                 response.setStatus(400);
             }
-            
+            response.setStatus(200);
             return result;
         } catch (Exception e) {
             response.setStatus(500);

@@ -58,7 +58,7 @@ public class SecurityConfig {
                         // 允许直接访问授权登录接口
                         .requestMatchers(HttpMethod.POST, "/api/auth/*").permitAll()
                         // 允许 SpringMVC 的默认错误地址匿名访问
-                        .requestMatchers("/", "/error", "/api/auth/login", "/api/auth/register", "/api/auth/me", "/api/auth/check-email").permitAll()
+                        .requestMatchers("/", "/error", "/api/auth/login", "/api/auth/register", "/api/auth/me", "/api/auth/check-email", "/api/upload/avatar").permitAll()
                         // 其他所有接口必须有Authority信息，Authority在登录成功后的UserDetailsImpl对象中默认设置“ROLE_USER”
                         .requestMatchers("/**").hasAnyAuthority("ROLE_USER")
                         // 允许任意请求被已登录用户访问，不检查Authority

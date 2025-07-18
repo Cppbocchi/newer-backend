@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.util.Map;
 
 @RestController
-public class LoginController {
+public class UserLoginController {
     @Resource
     private UserLoginService loginService;
 

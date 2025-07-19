@@ -16,6 +16,7 @@ public class UserDTO {
     private String avatarFileName;
     private String memberLevel;
     private Date joinDate;
-    private Integer totalTrips;
+    private Integer totalOrders;
     private Integer points;
+    private Double balance;
 }

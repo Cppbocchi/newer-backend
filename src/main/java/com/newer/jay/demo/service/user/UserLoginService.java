@@ -33,8 +33,9 @@ public class UserLoginService {
         userDTO.setAvatarFileName(user.getAvatarFileName());
         userDTO.setMemberLevel(user.getMemberLevel());
         userDTO.setJoinDate(user.getJoinDate());
-        userDTO.setTotalTrips(user.getTotalTrips());
+        userDTO.setTotalOrders(user.getTotalOrders());
         userDTO.setPoints(user.getPoints());
+        userDTO.setBalance(user.getBalance());
 
         LoginResponseDTO responseDTO = new LoginResponseDTO();
         responseDTO.setStatus(200);
